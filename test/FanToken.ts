@@ -5,10 +5,10 @@ import { FanToken } from "../typechain-types";
 
 describe("FanToken", function () {
     let fanToken: FanToken;
-    let owner: SignerWithAddress, donator: SignerWithAddress, otherClient: SignerWithAddress;
+    let owner: SignerWithAddress;
 
     beforeEach(async() => {
-        [owner, donator, otherClient] = await ethers.getSigners();
+        [owner] = await ethers.getSigners();
     
         const FanToken = await ethers.getContractFactory("FanToken");
         fanToken = await FanToken.deploy();
