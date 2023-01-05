@@ -45,7 +45,7 @@ contract CrowdFunding {
         project.owner = payable(msg.sender);
         project.token = _contractAddress;
         project.price = _price;
-        project.balance = _targetBalance;
+        project.balance = 0;
         project.targetBalance = _targetBalance;
         project.finished = false;
         
