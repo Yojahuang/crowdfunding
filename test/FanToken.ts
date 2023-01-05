@@ -6,12 +6,14 @@ import { FanToken } from "../typechain-types";
 describe("FanToken", function () {
     let fanToken: FanToken;
     let owner: SignerWithAddress;
+    const amount = ethers.BigNumber.from(100000000);
 
     beforeEach(async() => {
         [owner] = await ethers.getSigners();
-    
+        
+
         const FanToken = await ethers.getContractFactory("FanToken");
-        fanToken = await FanToken.deploy();
+        fanToken = await FanToken.deploy(amount);
     })
 
     it("should check the symbol and name of fantoken", async() => {
